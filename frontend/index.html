@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Meeting Summarizer</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header><span class="badge">AI WORKSPACE</span><h1>Meeting Summarizer</h1><p>Turn a transcript into clear outcomes, decisions, and next steps.</p></header>
+    <section class="card upload-card">
+      <form id="upload-form">
+        <label class="dropzone" for="transcript"><span class="icon">↑</span><strong id="file-label">Upload a .txt transcript</strong><small>Drag and drop or click to browse · Max 200 KB</small></label>
+        <input id="transcript" name="file" type="file" accept=".txt,text/plain" required>
+        <button id="submit" type="submit">Summarize meeting <span>→</span></button>
+      </form>
+      <p id="error" class="error" role="alert"></p>
+    </section>
+    <section id="results" class="results" hidden>
+      <div class="result-heading"><div><span class="badge">RESULTS</span><h2>Meeting outcomes</h2></div><button id="download" class="secondary">Download JSON</button></div>
+      <article class="card"><h3>Summary</h3><p id="summary"></p></article>
+      <div class="grid">
+        <article class="card"><h3>Decisions</h3><ul id="decisions"></ul></article>
+        <article class="card"><h3>Topics</h3><div id="topics" class="chips"></div></article>
+      </div>
+      <article class="card"><h3>Action items</h3><div id="actions"></div></article>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
